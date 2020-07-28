@@ -1,0 +1,50 @@
+{# ROI Training Inc - Venus Document Management System
+# Last Edit: 7/27/2020
+# Form Webpage
+#}
+
+{# [START form] #}
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{{action}} Document</h3>
+
+<form method="POST" enctype="multipart/form-data">
+
+  <div class="form-group">
+    <label for="title">Document Title</label>
+    <input type="text" name="title" id="title" value="{{venusdoc.title}}" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="author">Document Owner</label>
+    <input type="text" name="author" id="author" value="{{venusdoc.author}}" class="form-control"/>
+    <label for="author">Document OwnerID</label>
+    <input type="text" name="authorid" id="authorid" value="{{venusdoc.authorid}}" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="publishedDate">Document Date</label>
+    <input type="text" name="publishedDate" id="publishedDate" value="{{venusdoc.publishedDate}}" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Document Description</label>
+    <textarea name="description" id="description" class="form-control">{{venusdoc.description}}</textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="image">Document (Only .png, .jpg/.jpeg, .gif, .pdf and .txt files supported at this time)</label>
+    <input type="file" name="image" id="image" class="form-control"/>
+  </div>
+
+  <div class="form-group hidden">
+    <label for="imageUrl">Document URL</label>
+    <input type="text" name="imageUrl" id="imageUrl" value="{{venusdoc.imageUrl}}" class="form-control"/>
+  </div>
+
+  <button type="submit" class="btn btn-success">Save</button>
+</form>
+
+{% endblock %}
+{# [END form] #}

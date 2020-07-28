@@ -1,0 +1,49 @@
+{# ROI Training Inc - Venus Document Management System
+# Last Edit: 7/27/2020
+# List Webpage
+#}
+
+{% extends "base.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+  {% for message in messages %}
+    <p>{{ message }}<p>
+  {% endfor %}
+{% endwith %}
+
+<h3>VENUS Documents Available</h3>
+<a href="/venusdocs/add" class="btn btn-success btn-sm">
+  <i class="glyphicon glyphicon-plus"></i>
+  Add Document to Venus
+</a>
+
+{% for venusdoc in venusdocs %}
+<div class="media">
+  <a href="/venusdocs/{{venusdoc.id}}">
+    <div class="media-left">
+      {% if venusdoc.imageThumbnail %}
+        <img src="{{venusdoc.imageThumbnail}}">
+      {% else %}
+        <img src="/static/images/document.png">
+      {% endif %}
+    </div>
+    <div class="media-body">
+      Title: {{venusdoc.title}} ({{venusdoc.author}} ID: {{venusdoc.authorid}})
+    </div>
+  </a>
+</div>
+{% else %}
+<p>No Documents Found</p>
+{% endfor %}
+
+{% if last_title %}
+<nav>
+  <ul class="pager">
+    <li><a href="?start_after={{last_title}}">More</a></li>
+  </ul>
+</nav>
+{% endif %}
+
+{% endblock %}

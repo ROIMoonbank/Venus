@@ -1,0 +1,37 @@
+{# ROI Training Inc - Venus Document Management System
+# Last Edit: 7/27/2020
+# View Webpage
+#}
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Document: {{venusdoc.title}}</h3>
+
+<div class="btn-group">
+  <a href="/venusdocs/{{venusdoc.id}}/edit" class="btn btn-primary btn-sm">
+    <i class="glyphicon glyphicon-edit"></i>
+    Edit Document
+  </a>
+  <a href="/venusdocs/{{venusdoc.id}}/delete" class="btn btn-danger btn-sm">
+    <i class="glyphicon glyphicon-trash"></i>
+    Delete Document
+  </a>
+</div>
+<div class="media-body">
+    <h5 class="venusdoc-author">Uploaded By: {{venusdoc.author|default('Unknown', True)}} ID: {{venusdoc.authorid|default('Unknown', True)}} on {{venusdoc.publishedDate}}</h5>
+    <p class="venusdoc-description">Description: {{venusdoc.description}}</p>
+</div>
+<div class="media">
+  {# [START venusdoc_image] #}
+  <div class="media-left">
+    {% if venusdoc.imageUrl %}
+      <img class="venusdoc-image" src="{{venusdoc.imageUrl}}" style="max-height: 80%; max-width: 80%;">
+    {% else %}
+      <img class="venusdoc-image" src="/static/images/document.png">
+    {% endif %}
+  </div>
+  {# [END venusdoc_image] #}
+</div>
+{% endblock %}
