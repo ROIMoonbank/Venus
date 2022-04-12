@@ -1,4 +1,4 @@
-Flask==1.1.2
+Flask==2.1.1
 google-cloud-firestore==1.8.1
 google-cloud-storage==1.29.0
 google-cloud-logging==1.15.0
@@ -7,3 +7,4 @@ google-cloud-pubsub==1.7.0
 gunicorn==19.9.0
 six==1.15.0
 pillow==7.2.0
+Jinja==3.0.3
