@@ -1,10 +1,7 @@
 # ROI Training Inc - Venus Document Management System
 # Last Edit: 6/18/2024
 
-# [START venusapp_firestore_client_import]
 from google.cloud import firestore
-# [END venusapp_firestore_client_import]
-
 
 def document_to_dict(doc):
     if not doc.exists:

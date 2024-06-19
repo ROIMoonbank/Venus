@@ -6,13 +6,12 @@ import logging
 import firestore
 from flask import current_app, flash, Flask, Markup, redirect, render_template
 from flask import request, url_for
+
 import google.cloud.logging
 import storage
 import messages
 import thumbnail
 
-
-# [START upload_image_file]
 def upload_image_file(img):
     """
     Upload the user-uploaded file to Google Cloud Storage and retrieve its
@@ -31,8 +30,6 @@ def upload_image_file(img):
         'Uploaded file %s as %s.', img.filename, public_url)
 
     return public_url
-# [END upload_image_file]
-
 
 app = Flask(__name__)
 app.config.update(
@@ -44,7 +41,6 @@ app.config.update(
 app.debug = False
 app.testing = False
 
-# Configure logging
 if not app.testing:
     logging.basicConfig(level=logging.INFO)
     client = google.cloud.logging.Client()
@@ -131,7 +127,7 @@ def errors():
     raise Exception('This is an intentional exception.')
 
 
-# Add an error handler that reports exceptions to Stackdriver Error
+# Add an error handler that reports exceptions to Operations  Error
 # Reporting. Note that this error handler is only used when debug
 # is False
 @app.errorhandler(500)
