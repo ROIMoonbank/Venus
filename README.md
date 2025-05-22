@@ -30,3 +30,14 @@ PubSub Topic called "activities"\
 
 PubSub Subscription called "activites-catchall"\
     Command : `gcloud pubsub subscriptions create venus-catchall --topic=projects/$GOOGLE_CLOUD_PROJECT/topics/venus`
+
+Firestore Default Database Creation/Initialization\
+    Open Firestore\
+    Click Create a Firestore Database\
+    Database ID: (leave default)\
+    Standard Edition\
+    Configuration Options:\
+        Firestore Native\
+        Security Rules: Open\
+    Location:\
+        Multi-regional nam5\
