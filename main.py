@@ -3,7 +3,7 @@
 
 import logging
 import firestore
-from flask import current_app, flash, Flask, Markup, redirect, render_template
+from flask import current_app, flash, Flask, redirect, render_template
 from flask import request, url_for
 
 import google.cloud.logging

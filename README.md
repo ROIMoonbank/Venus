@@ -15,7 +15,7 @@ Make sure you have a project set\
 Bucket named projectid-bucket\
     Command: `gcloud storage buckets create gs://$GOOGLE_CLOUD_PROJECT-bucket`
     
-BigQuery Dataset called "activities"\
+BigQuery Dataset called "venus"\
     Command: `bq mk venus`
 
 BigQuery Table called "resources" - starting schema\
@@ -41,3 +41,5 @@ Firestore Default Database Creation/Initialization\
         Security Rules: Open\
     Location:\
         Multi-regional nam5\
+
+    
