@@ -1,3 +1,32 @@
 # PROJECT VENUS
 Vault Enabling Necessary User Storage (VENUS) is a document storage solution for storing important documents within Moonbank.  
 Customers are provided with an interface allowing them to upload and view their documents.
+
+## Clone in the Repo
+Open Cloud Shell\
+Clone in the `https://github.com/ROIMoonbank/Venus` repo\
+    Command: `git clone https://github.com/ROIMoonbank/Venus`\
+    Command: `cd Moonbank`
+
+## VENUS Setup/Dependancies
+Make sure you have a project set\
+    Command: `gcloud config set project YOURPROJECTNAME`
+
+Bucket named projectid-bucket\
+    Command: `gcloud storage buckets create gs://$GOOGLE_CLOUD_PROJECT-bucket`
+    
+BigQuery Dataset called "activities"\
+    Command: `bq mk activities`
+
+BigQuery Table called "resources" - starting schema\
+    Command: `bq mk --schema messages:STRING -t activities.resources`
+
+Enable the Pub/Sub APIs\
+    Command: `gcloud services enable pubsub.googleapis.com`
+    Command: `gcloud services list`
+
+PubSub Topic called "activities"\
+    Command: `gcloud pubsub topics create activities`
+
+PubSub Subscription called "activites-catchall"\
+    Command : `gcloud pubsub subscriptions create activities-catchall --topic=projects/$GOOGLE_CLOUD_PROJECT/topics/activities`
