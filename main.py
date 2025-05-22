@@ -12,6 +12,7 @@ import google.cloud.logging
 import storage
 import messages
 import thumbnail
+import ai
 
 def upload_image_file(img):
     """

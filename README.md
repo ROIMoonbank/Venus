@@ -12,6 +12,14 @@ Clone in the `https://github.com/ROIMoonbank/Venus` repo\
 Make sure you have a project set\
     Command: `gcloud config set project YOURPROJECTNAME`
 
+Enable APIs that may be needed\
+    Command: `gcloud services enable clouderrorreporting.googleapis.com`
+    Command: `gcloud services enable firestore.googleapis.com`
+    Command: `gcloud services enable firebaserules.googleapis.com`
+    Command: `gcloud services enable pubsub.googleapis.com`
+    Command: `gcloud services enable aiplatform.googleapis.com`
+    Command: `gcloud services list`
+
 Bucket named projectid-bucket\
     Command: `gcloud storage buckets create gs://$GOOGLE_CLOUD_PROJECT-bucket`
     
@@ -20,10 +28,6 @@ BigQuery Dataset called "venus"\
 
 BigQuery Table called "resources" - starting schema\
     Command: `bq mk --schema messages:STRING -t venus.resources`
-
-Enable the Pub/Sub APIs\
-    Command: `gcloud services enable pubsub.googleapis.com`
-    Command: `gcloud services list`
 
 PubSub Topic called "activities"\
     Command: `gcloud pubsub topics create venus`
