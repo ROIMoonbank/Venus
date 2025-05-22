@@ -6,7 +6,7 @@ Customers are provided with an interface allowing them to upload and view their 
 Open Cloud Shell\
 Clone in the `https://github.com/ROIMoonbank/Venus` repo\
     Command: `git clone https://github.com/ROIMoonbank/Venus`\
-    Command: `cd Moonbank`
+    Command: `cd Venus`
 
 ## VENUS Setup/Dependancies
 Make sure you have a project set\
@@ -16,17 +16,17 @@ Bucket named projectid-bucket\
     Command: `gcloud storage buckets create gs://$GOOGLE_CLOUD_PROJECT-bucket`
     
 BigQuery Dataset called "activities"\
-    Command: `bq mk activities`
+    Command: `bq mk venus`
 
 BigQuery Table called "resources" - starting schema\
-    Command: `bq mk --schema messages:STRING -t activities.resources`
+    Command: `bq mk --schema messages:STRING -t venus.resources`
 
 Enable the Pub/Sub APIs\
     Command: `gcloud services enable pubsub.googleapis.com`
     Command: `gcloud services list`
 
 PubSub Topic called "activities"\
-    Command: `gcloud pubsub topics create activities`
+    Command: `gcloud pubsub topics create venus`
 
 PubSub Subscription called "activites-catchall"\
-    Command : `gcloud pubsub subscriptions create activities-catchall --topic=projects/$GOOGLE_CLOUD_PROJECT/topics/activities`
+    Command : `gcloud pubsub subscriptions create venus-catchall --topic=projects/$GOOGLE_CLOUD_PROJECT/topics/venus`
