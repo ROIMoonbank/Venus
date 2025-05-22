@@ -41,5 +41,3 @@ Firestore Default Database Creation/Initialization\
         Security Rules: Open\
     Location:\
         Multi-regional nam5\
-
-    

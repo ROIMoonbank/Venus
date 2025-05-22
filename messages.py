@@ -6,7 +6,7 @@ from google.cloud import pubsub_v1
 
 def sendpubsub(message):
     project_id = os.getenv('GOOGLE_CLOUD_PROJECT')
-    topic_id = "venus-messages"
+    topic_id = "venus"
     publisher = pubsub_v1.PublisherClient()
     topic_path = publisher.topic_path(project_id, topic_id)
     data = message.encode("utf-8")

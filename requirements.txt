@@ -1,4 +1,5 @@
 Flask
+MarkupSafe
 google-cloud-firestore
 google-cloud-storage
 google-cloud-logging
