@@ -4,12 +4,13 @@
 import json
 import logging
 import os
-import firestore
+
 from flask import current_app, flash, Flask, redirect, render_template
 from markupsafe import Markup
 from google.cloud import error_reporting
 from flask import request, url_for
 
+import firestore
 import google.cloud.logging
 import google.auth
 import storage
@@ -49,7 +50,6 @@ app.testing = False
 if not app.testing:
     logging.basicConfig(level=logging.INFO)
     client = google.cloud.logging.Client()
-    # Attaches a Google Stackdriver logging handler to the root logger
     client.setup_logging()
 
 @app.route('/')
@@ -66,12 +66,6 @@ def version():
 def project():
     PROJECT_ID = os.getenv('GOOGLE_CLOUD_PROJECT')
     return "GOOGLE_CLOUD_PROJECT Env Variable: " + PROJECT_ID
-
-@app.route('/serviceaccount')
-def serviceaccount():
-    credentials = google.auth.default()
-    service_account = credentials[1]
-    return "Attached Google Service Acount: " + service_account
 
 @app.route('/venusdocs/<venusdoc_id>')
 def view(venusdoc_id):

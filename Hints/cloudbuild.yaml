@@ -1,0 +1,6 @@
+# This is a basic cloud build example. Replace REGION and PROJECT_ID
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'REGION-docker.pkg.dev/PROJECT_ID/venusapp/venusapp:latest', '.' ]
+images:
+- 'REGION-docker.pkg.dev/PROJECT_ID/venusapp/venusapp:latest'

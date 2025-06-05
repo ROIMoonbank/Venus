@@ -18,6 +18,9 @@ Enable APIs that may be needed
     Command: `gcloud services enable firebaserules.googleapis.com`  
     Command: `gcloud services enable pubsub.googleapis.com`  
     Command: `gcloud services enable aiplatform.googleapis.com`  
+    Command: `gcloud services enable clouderrorreporting.googleapis.com`  
+    Command: `gcloud services enable cloudbuild.googleapis.com`  
+    Command: `gcloud services enable artifactregistry.googleapis.com`  
     Command: `gcloud services list`  
 
 Bucket named projectid-bucket  
