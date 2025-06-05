@@ -13,7 +13,6 @@ from google.cloud import storage
 from werkzeug.exceptions import BadRequest
 from werkzeug.utils import secure_filename
 
-
 def _check_extension(filename, allowed_extensions):
     file, ext = os.path.splitext(filename)
     if (ext.replace('.', '').lower() not in allowed_extensions):

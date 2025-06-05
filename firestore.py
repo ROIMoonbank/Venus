@@ -1,5 +1,5 @@
 # ROI Training Inc - Venus Document Management System
-# Last Edit: 2025-05-22
+# Last Edit: 2025-06-05
 
 from google.cloud import firestore
 
@@ -9,7 +9,6 @@ def document_to_dict(doc):
     doc_dict = doc.to_dict()
     doc_dict['id'] = doc.id
     return doc_dict
-
 
 def next_page(limit=10, start_after=None):
     db = firestore.Client()
@@ -29,7 +28,6 @@ def next_page(limit=10, start_after=None):
         last_title = docs[-1][u'title']
     return docs, last_title
 
-
 def read(venusdoc_id):
     # [START venusapp_firestore_client]
     db = firestore.Client()
@@ -38,16 +36,13 @@ def read(venusdoc_id):
     # [END venusapp_firestore_client]
     return document_to_dict(snapshot)
 
-
 def update(data, venusdoc_id=None):
     db = firestore.Client()
     venusdoc_ref = db.collection(u'venusdoc').document(venusdoc_id)
     venusdoc_ref.set(data)
     return document_to_dict(venusdoc_ref.get())
 
-
 create = update
-
 
 def delete(id):
     db = firestore.Client()
