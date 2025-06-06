@@ -13,7 +13,6 @@ Make sure you have a project set
     Command: `gcloud config set project YOURPROJECTNAME`
 
 Enable APIs that may be needed  
-    Command: `gcloud services enable clouderrorreporting.googleapis.com`  
     Command: `gcloud services enable firestore.googleapis.com`  
     Command: `gcloud services enable firebaserules.googleapis.com`  
     Command: `gcloud services enable pubsub.googleapis.com`  

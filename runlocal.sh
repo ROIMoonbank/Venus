@@ -1,5 +1,5 @@
 #!/bin/bash
-# Updated 2025-05-22
+# Updated 2025-06-05
 
 sudo pip3 install -r requirements.txt
-gunicorn -b :8080 main:app
+gunicorn --b 0.0.0.0:8080 main:app
