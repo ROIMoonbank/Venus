@@ -2,4 +2,4 @@
 # Updated 2025-06-05
 
 sudo pip3 install -r requirements.txt
-gunicorn --b 0.0.0.0:8080 main:app
+gunicorn --bind 0.0.0.0:8080 main:app
